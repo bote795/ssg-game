@@ -39,20 +39,20 @@ export class MainMenuScene extends Phaser.Scene {
   create(): void {
     this.bitmapTexts.push(
       this.add.bitmapText(
-        this.sys.canvas.width / 2 - 28,
+        this.sys.canvas.width / 2 - 75,
         this.sys.canvas.height / 2 - 10,
         "snakeFont",
-        "Press S: To Wax Nick",
+        "Press S: For Treasure",
         8
       )
     );
 
     this.bitmapTexts.push(
       this.add.bitmapText(
-        this.sys.canvas.width / 2 - 70,
+        this.sys.canvas.width / 2 - 60,
         this.sys.canvas.height / 2 - 60,
         "snakeFont",
-        "Sleep Stream / Nick Wax Stream",
+        "MoonShot",
         16
       )
     );
