@@ -10,7 +10,7 @@ export class Claw extends Phaser.GameObjects.Graphics {
   
     private initImage(): void {
         this.lineStyle(4, 0x00ff00);
-        this.strokeRect(32, 300, 50, 10);
+        this.strokeRect(32, 100, 50, 10);
     }
 
     extend(): void {

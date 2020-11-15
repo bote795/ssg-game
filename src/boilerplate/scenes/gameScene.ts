@@ -8,6 +8,7 @@
 import { Apple } from "../objects/apple";
 import { Snake } from "../objects/snake";
 import { CONST } from "../const/const";
+import { Claw } from "../objects/claw";
 
 export class GameScene extends Phaser.Scene {
   // field and game setting
@@ -23,6 +24,7 @@ export class GameScene extends Phaser.Scene {
   // objects
   private player: Snake;
   private apple: Apple;
+  private claw: Claw;
   private gameBorder: Phaser.GameObjects.Graphics[];
 
   // texts
@@ -49,6 +51,7 @@ export class GameScene extends Phaser.Scene {
     // objects
     this.gameBorder = [];
     let i = 0;
+
     for (let x = 0; x < this.gameWidth / this.fieldSize; x++) {
       for (let y = 0; y < this.gameHeight / this.fieldSize; y++) {
         if (
@@ -89,6 +92,9 @@ export class GameScene extends Phaser.Scene {
       "" + CONST.SCORE,
       8
     );
+  
+    this.claw = new Claw({ scene: this, opt: {} });
+
   }
 
   update(time): void {
