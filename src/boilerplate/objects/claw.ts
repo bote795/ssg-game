@@ -19,4 +19,3 @@ export class Claw extends Phaser.GameObjects.Graphics {
   
     update(): void {}
   }
-  
