@@ -52,7 +52,7 @@ export class MainMenuScene extends Phaser.Scene {
         this.sys.canvas.width / 2 - 70,
         this.sys.canvas.height / 2 - 60,
         "snakeFont",
-        "MoonShot",
+        "Sleep Stream / Nick Wax Stream",
         16
       )
     );
