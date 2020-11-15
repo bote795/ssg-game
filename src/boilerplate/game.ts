@@ -1,19 +1,33 @@
 /**
  * @author       Digitsensitive <digit.sensitivee@gmail.com>
  * @copyright    2018 - 2019 digitsensitive
- * @license      {@link https://github.com/digitsensitive/phaser3-typescript/blob/master/LICENSE.md | MIT License}
+ * @description  Snake: Game
+ * @license      Digitsensitive
  */
 
 import "phaser";
-import { MainScene } from "./scenes/main-scene";
+import { BootScene } from "./scenes/bootScene";
+import { MainMenuScene } from "./scenes/mainMenuScene";
+import { GameScene } from "./scenes/gameScene";
 
-// main game configuration
 const config: Phaser.Types.Core.GameConfig = {
-  width: 800,
-  height: 600,
+  title: "MoonShot",
+  url: "https://github.com/digitsensitive/phaser3-typescript",
+  version: "1.1",
+  width: 256,
+  height: 224,
+  zoom: 3,
   type: Phaser.AUTO,
   parent: "game",
-  scene: MainScene
+  scene: [BootScene, MainMenuScene, GameScene],
+  input: {
+    keyboard: true,
+    mouse: false,
+    touch: false,
+    gamepad: false
+  },
+  backgroundColor: "#000000",
+  render: { pixelArt: true, antialias: false }
 };
 
 export class Game extends Phaser.Game {
@@ -22,7 +36,6 @@ export class Game extends Phaser.Game {
   }
 }
 
-// when the page is loaded, create our game instance
 window.addEventListener("load", () => {
-  const game = new Game(config);
+  var game = new Game(config);
 });
