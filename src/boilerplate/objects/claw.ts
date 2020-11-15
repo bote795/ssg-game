@@ -1,16 +1,16 @@
-export class Claw extends Phaser.GameObjects.Image {
+export class Claw extends Phaser.GameObjects.Graphics {
     private clawSpeed: number;
   
     constructor(params) {
-      super(params.scene, params.x, params.y, params.key);
+        super(params.scene, params.opt);
   
-      this.rotation = params.rotation;
       this.initImage();
       this.scene.add.existing(this);
     }
   
     private initImage(): void {
-     
+        this.lineStyle(4, 0x00ff00);
+        this.strokeRect(32, 300, 50, 10);
     }
 
     extend(): void {
