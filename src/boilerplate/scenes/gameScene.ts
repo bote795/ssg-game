@@ -93,7 +93,7 @@ export class GameScene extends Phaser.Scene {
       8
     );
   
-    this.claw = new Claw({ scene: this, opt: {} });
+    this.claw = new Claw({ scene: this, x: this.gameWidth/2, y: 10, key: 'claw' });
 
   }
 
@@ -101,16 +101,18 @@ export class GameScene extends Phaser.Scene {
     if (this.tick === 0) {
       this.tick = time;
     }
+    this.claw.update();
     if (!this.player.isDead()) {
-      if (time - this.tick > 100) {
-        this.player.move();
-        this.checkCollision();
-        this.tick = time;
-      }
+      // if (time - this.tick > 100) {
+      //   this.player.move();
+      //   this.checkCollision();
+      //   this.tick = time;
+      // }
       this.player.handleInput();
     } else {
       this.scene.start("MainMenuScene");
     }
+    
   }
 
   private checkCollision(): void {

@@ -12,6 +12,9 @@ export class BootScene extends Phaser.Scene {
     });
   }
 
+  preload(): void{
+    this.load.image('claw', 'assets/claw.png');
+  }
   update(): void {
     this.scene.start("MainMenuScene");
   }
